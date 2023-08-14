@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lectures",
+  "info": {
+    "singularName": "lecture",
+    "pluralName": "lectures",
+    "displayName": "lecture",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "capacity": {
+      "type": "integer"
+    },
+    "place": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "mainImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "gallery": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "lectures"
+    }
+  }
+}
